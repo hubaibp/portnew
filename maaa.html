@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Waiting+for+the+Sunrise" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="main.css".css>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+
+
+    <header>
+        <div class="logo">Hubaib P</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+      
+    <main class="container">
+    
+        <section id="home">
+            <h1 class="animate-on-scroll" style="font-size: 30px;">Hi there...</h1>
+            <img src="port3.jpg" width = "350" height = "300"alt="image" >
+             
+        <p style="font-weight: bold; font-size: 30px;">I am</p>   
+            <div class="typewriter">
+            <span class="typewriter-text"></span>
+            </div>
+        
+            <script>
+                const typewriterElement = document.querySelector('.typewriter-text');
+                const roles = [
+                    "Hubaib",
+                    "Software engineer",
+                    "Web developer"
+                ];
+                let roleIndex = 0;
+        
+                function typeWriter(text, onComplete) {
+                    let i = 0;
+                    function type() {
+                        if (i < text.length) {
+                            typewriterElement.innerHTML += text.charAt(i);
+                            i++;
+                            setTimeout(type, 100);
+                        } else {
+                            setTimeout(onComplete, 100);
+                        }
+                    }
+                    type();
+                }
+        
+                function deleteText(onComplete) {
+                    function erase() {
+                        if (typewriterElement.innerHTML.length > 0) {
+                            typewriterElement.innerHTML = typewriterElement.innerHTML.slice(0, -1);
+                            setTimeout(erase, 20);
+                        } else {
+                            setTimeout(onComplete, 500);
+                        }
+                    }
+                    setTimeout(erase, 1500);
+                }
+        
+                function nextRole() {
+                    const currentRole = roles[roleIndex];
+                    typeWriter(currentRole, () => {
+                        deleteText(() => {
+                            roleIndex = (roleIndex + 1) % roles.length;
+                            nextRole();
+                        });
+                    });
+                }
+        
+                nextRole();
+            </script>
+    
+    
+                <p class="animate-on-scroll" style="padding: 10px;padding-left: 3px;">Motivated, highly organized, and hard-working
+                    student seeking an entry-level position to begin my
+                    career in a professional environment and to gain
+                    valuable skills while contributing significantly to
+                    the company's success</p>
+                    
+
+        <a href="https://drive.google.com/file/d/1kGE0iEF5HAIJrB17Jfw8MKPo-6pSIWgG/view?usp=drivesdk" class="cta-button animate-on-scroll">Hire me</a>
+            
+        </section>
+      
+
+
+
+
+
+
+
+
+
+        <section id="services">
+          
+            <h3 class="animate-on-scroll">What we do</h3>
+           
+            <div class="services-grid">
+                <div class="service-card slide-in-left">
+                    <img src="/img/conversation.png" alt="Web Design">
+                    <h4>Planning</h4>
+                    <p>Map out objectives, define goals, set clear milestones, and establish a solid foundation for success.</p>
+                </div>
+                <div class="service-card slide-in-left">
+                    <img src="/img/illustration.png" alt="Web Development">
+                    <h4>Designing</h4>
+                    <p>Craft user-centric interfaces, ensure intuitive navigation, focus on aesthetics, and prioritize responsive, adaptive layouts.</p>
+                </div>
+                <div class="service-card slide-in-left">
+                    <img src="/img/programming.png" alt="UI/UX Design">
+                    <h4>Developing</h4>
+                    <p>Write clean, scalable code, implement best practices, optimize performance, and ensure cross-browser and device compatibility.</p>
+                </div>
+                <div class="service-card slide-in-left">
+                    <img src="/img/bug (1).png" alt="SEO Optimization">
+                    <h4>Testing and Deployment</h4>
+                    <p>Thoroughly test functionality, fix bugs, validate security, automate deployment, and monitor post-launch performance closely</p>
+                </div>
+            </div>
+        </section>
+      
+        <section id="projects">
+        
+            <h3 class="animate-on-scroll">Projects</h3>
+            <div class="projects-grid">
+                <div class="project-card slide-in-left">
+                    <img src="b4.jpg" alt="Project 1">
+                    <h4>Admission helpdesk</h4>
+                    <p>A website for College Admission Help Center that includes information about the college and scholarships for students</p>
+                    <div class="project-links">
+                        <a href="https://udsfadmissionhelpdesk.netlify.app/" target="_blank" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                       <!-- <a href="#" target="_blank" title="View Code"><i class="fab fa-github"></i></a>
+                    -->    </div>
+                </div>
+              <!--  <div class="project-card slide-in-left">
+                    <img src="https://source.unsplash.com/random/600x400?app" alt="Project 2">
+                    <h4>Project 2</h4>
+                    <p>Description of your second project. Explain what problem it solves and how you built it.</p>
+                    <div class="project-links">
+                        <a href="#" target="_blank" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                        <a href="#" target="_blank" title="View Code"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="project-card slide-in-left">
+                    <img src="https://source.unsplash.com/random/600x400?software" alt="Project 3">
+                    <h4>Project 3</h4>
+                    <p>Details about your third project. Mention any challenges you overcame during development.</p>
+                    <div class="project-links">
+                        <a href="#" target="_blank" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                        <a href="#" target="_blank" title="View Code"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>-->
+        </section>
+
+        <section id="contact">
+            <h3 class="animate-on-scroll">Get in Touch</h3>
+            <p class="animate-on-scroll">I'm always open to new opportunities and collaborations. Feel free to reach out!</p>
+           
+            <div class="social-links animate-on-scroll">
+              <center> <a href="https://github.com/hubaibp" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/hubaibp/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                
+                <a href="https://drive.google.com/file/d/1kGE0iEF5HAIJrB17Jfw8MKPo-6pSIWgG/view?usp=drivesdk" class="cta-button animate-on-scroll">Hire me</a>
+                <a href="https://www.instagram.com/hubaib_p?igsh=bGFsbnFqODZlYmZz" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/+918086700517" target="_blank"><i class="fab fa-whatsapp"></i></a></center> 
+        </section>
+    </main>
+
+    <script src="java.js"></script>
+</body>
+</html>
+
+
+        

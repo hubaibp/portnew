@@ -40,3 +40,5 @@ document.addEventListener('DOMContentLoaded', (event) => {
         observer.observe(section);
     });
 });
+
+AOS.init();

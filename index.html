@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hubaib P</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+
+    <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+
     <link rel="stylesheet" href="main.css">
 </head>
+
 <body>
     <header>
         <nav>
@@ -35,21 +41,22 @@
 
         <section id="home" class="hero">
             <canvas id="canvas"></canvas>
-            
+
             <div class="hero-content">
                 <div class="hero-image">
                     <img src="port3.jpg">
                 </div>
-                
+
                 <h1></h1>
                 <div class="typewriter">
                     <span class="typewriter-text"></span>
                 </div>
-                
-                <a href="https://drive.google.com/file/d/1-5fMUazKIbr2O0y4mYYyQ4B5rsbOkmCx/view?usp=sharing" class="btn" style="margin-top: 25px;">Hire</a>
+
+                <a href="https://drive.google.com/file/d/1-5fMUazKIbr2O0y4mYYyQ4B5rsbOkmCx/view?usp=sharing" class="btn"
+                    style="margin-top: 25px;">Hire</a>
             </div>
-        
-            
+
+
 
             <script>
                 const typewriterElement = document.querySelector('.typewriter-text');
@@ -61,7 +68,7 @@
                     "Web developer"
                 ];
                 let roleIndex = 0;
-        
+
                 function typeWriter(text, onComplete) {
                     let i = 0;
                     function type() {
@@ -75,7 +82,7 @@
                     }
                     type();
                 }
-        
+
                 function deleteText(onComplete) {
                     function erase() {
                         if (typewriterElement.innerHTML.length > 0) {
@@ -87,7 +94,7 @@
                     }
                     setTimeout(erase, 1500);
                 }
-        
+
                 function nextRole() {
                     const currentRole = roles[roleIndex];
                     typeWriter(currentRole, () => {
@@ -97,20 +104,20 @@
                         });
                     });
                 }
-        
+
                 nextRole();
             </script>
-        
+
             <script>
                 const canvas = document.getElementById('canvas');
                 const ctx = canvas.getContext('2d');
                 canvas.width = window.innerWidth;
                 canvas.height = window.innerHeight;
-        
+
                 let particlesArray = [];
                 const numberOfParticles = 50;
                 const connectionDistance = 150;
-        
+
                 class Particle {
                     constructor() {
                         this.x = Math.random() * canvas.width;
@@ -119,15 +126,15 @@
                         this.speedX = Math.random() * 2 - 0.5;
                         this.speedY = Math.random() * 2 - 0.5;
                     }
-        
+
                     update() {
                         this.x += this.speedX;
                         this.y += this.speedY;
-        
+
                         if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
                         if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
                     }
-        
+
                     draw() {
                         ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
                         ctx.beginPath();
@@ -135,22 +142,22 @@
                         ctx.fill();
                     }
                 }
-        
+
                 function init() {
                     for (let i = 0; i < numberOfParticles; i++) {
                         particlesArray.push(new Particle());
                     }
                 }
-        
+
                 function connect() {
                     for (let a = 0; a < particlesArray.length; a++) {
                         for (let b = a; b < particlesArray.length; b++) {
                             const dx = particlesArray[a].x - particlesArray[b].x;
                             const dy = particlesArray[a].y - particlesArray[b].y;
                             const distance = Math.sqrt(dx * dx + dy * dy);
-        
+
                             if (distance < connectionDistance) {
-                                const opacity = 1 - (distance/connectionDistance);
+                                const opacity = 1 - (distance / connectionDistance);
                                 ctx.strokeStyle = `rgba(255, 255, 255, ${opacity * 0.5})`;
                                 ctx.lineWidth = 1;
                                 ctx.beginPath();
@@ -161,7 +168,7 @@
                         }
                     }
                 }
-        
+
                 function animate() {
                     ctx.clearRect(0, 0, canvas.width, canvas.height);
                     for (let particle of particlesArray) {
@@ -171,7 +178,7 @@
                     connect();
                     requestAnimationFrame(animate);
                 }
-        
+
                 window.addEventListener('resize', () => {
                     canvas.width = window.innerWidth;
                     canvas.height = window.innerHeight;
@@ -180,15 +187,15 @@
                         if (particle.y > canvas.height) particle.y = canvas.height - 10;
                     }
                 });
-        
+
                 init();
                 animate();
             </script>
         </section>
-        
 
 
-    
+
+
 
 
 
@@ -201,19 +208,25 @@
 
 
         <section id="about">
-            <div class="container">
+            <div class="container" data-aos="fade-up" data-aos-duration="2000">
                 <h2>About Me</h2>
                 <div class="about-content">
                     <div>
-                        <p>I am an enthusiastic fresher passionate about software development, aiming to contribute valuable and innovative solutions to companies. With a strong foundation in both front-end and back-end technologies, I am committed to continuous learning and staying up-to-date with the latest industry trends. I believe in the power of technology to drive efficiency and growth, and I am eager to apply my skills to create impactful software solutions that meet business needs and enhance user experiences. My goal is to collaborate with teams to deliver high-quality, efficient, and scalable applications that can make a real difference</p>
+                        <p>I am an enthusiastic fresher passionate about software development, aiming to contribute
+                            valuable and innovative solutions to companies. With a strong foundation in both front-end
+                            and back-end technologies, I am committed to continuous learning and staying up-to-date with
+                            the latest industry trends. I believe in the power of technology to drive efficiency and
+                            growth, and I am eager to apply my skills to create impactful software solutions that meet
+                            business needs and enhance user experiences. My goal is to collaborate with teams to deliver
+                            high-quality, efficient, and scalable applications that can make a real difference</p>
                     </div>
-                    
+
                 </div>
             </div>
         </section>
 
         <section id="skills">
-            <div class="container">
+            <div class="container" data-aos="zoom-in-left" data-aos-duration="2000">
                 <h2>Skills</h2>
                 <div class="skills-container">
                     <div class="skill-category">
@@ -231,7 +244,7 @@
                             <li><i class="fab fa-html5"></i>HTML5</li>
                             <li><i class="fab fa-css3-alt"></i>CSS3</li>
                             <li><i class="fab fa-js"></i>JavaScript</li>
-                         
+
                             <li><i class="fab fa-python"></i>Django</li>
                             <li><i class="fas fa-server"></i>RESTful APIs</li>
                         </ul>
@@ -240,7 +253,7 @@
                         <h3>Database</h3>
                         <ul class="skill-list">
                             <li><i class="fas fa-database"></i>MySQL</li>
-                       
+
                         </ul>
                     </div>
                     <div class="skill-category">
@@ -261,13 +274,13 @@
                         <h3>Btech Computerscience and engineering</h3>
                         <p style="padding-top: 13px;">LBS college of Engineering, 2020 - 2024</p>
                     </div>
-                    
+
                 </div>
             </div>
         </section>
 
         <section id="experience">
-            <div class="container">
+            <div class="container" data-aos="fade-left" data-aos-duration="2000">
                 <h2>Experience</h2>
                 <div class="timeline">
                     <div class="timeline-item left">
@@ -276,19 +289,26 @@
                             <p>Outlier, 2024 JUN - Present</p>
                             <sub>(Remote)</sub>
                             <ul>
-                            <li>Designed and optimized prompts to improve AI model performance</li>
-                        <li>Enhancing response accuracy and effectiveness for better user interactions.</li>
-                            </ul>                 
+                                <li>Designed and optimized prompts to improve AI model performance</li>
+                                <li>Enhancing response accuracy and effectiveness for better user interactions.</li>
+                            </ul>
                         </div>
                     </div>
-                    <!-- <div class="timeline-item right">
+                    <div class="timeline-item right">
                         <div class="timeline-content">
-                            <h3>Full Stack Developer</h3>
-                            <p>Company Name, 2018 - 2021</p>
-                            <p>Developed and maintained full-stack web applications using React and Node.js.</p>
+                            <h3>Python Intern</h3>
+                            <p>Luminar Technolab, 2024 - present</p>
+                            <sub>Intern</sub>
+                            <ul>
+                                <li> Contributed to the development of web applications using Python, Django, and MySQL,
+                                    focusing on backend functionality and database management.</li>
+                                <li>Designed and implemented responsive front-end interfaces with Bootstrap, enhancing
+                                    user experience across devices.</li>
+
+                            </ul>
                         </div>
                     </div>
-                    <div class="timeline-item left">
+                    <!-- <div class="timeline-item left">
                         <div class="timeline-content">
                             <h3>Junior Web Developer</h3>
                             <p>Company Name, 2016 - 2018</p>
@@ -303,46 +323,98 @@
             <div class="container">
                 <h2>Projects</h2>
                 <div class="projects-content">
-                    <div class="project-card">
+
+
+                    <div class="project-card" data-aos="fade-right" data-aos-offset="300"
+                        data-aos-easing="ease-in-sine">
                         <div class="project-image">
-                            <img src="a1.png" alt="E-commerce Platform">
+                            <img src="images.jpeg" alt="face">
                         </div>
-                        <h3>Al Fayiz Traders, Doha</h3>
+                        <h3>FaceTrack-Attendance-System</h3>
                         <ul style="padding-left: 10px;">
-                        <li>Created a responsive,modern looking website for one of the Hardware tools Traders in Doha,Qatar</li>
-                        <li>Tools Used: HTML CSS JS</li>
+                            <li>Designed and developed a Django application integrating DeepFace and OpenCV to achieve
+                                real-time face recognition and attendance management.</li>
+                            <li>Utilized Scikit-learn to standardize face embeddings, improving facial recognition
+                                accuracy and consistency</li>
+                                <li>Tools used:<br>Django |
+                                    OpenCV |
+                                    DeepFace |
+                                    NumPy </li>
                         </ul>
-                       <a href="https://alfayizdoha.com/" style="color: var(--primary-color); font-size: 25px;"><i class="fa fa-link"></i></a>
+                        <a href="https://github.com/hubaibp/FaceTrack-Attendance-System" style="color: var(--primary-color); font-size: 25px;"><i
+                                class="fa fa-link"></i></a>
                     </div>
+
+
+
+<!-- 
                     <div class="project-card">
                         <div class="project-image">
                             <img src="b4.jpg" alt="Task Management App">
                         </div>
                         <h3>College Admission helpdesk</h3>
                         <ul style="padding-left: 10px;">
-                            <li>A website for College Admission Help Center that includes information about the college and scholarships for
+                            <li>A website for College Admission Help Center that includes information about the college
+                                and scholarships for
                                 students.</li>
                             <li>Tools Used: HTML CSS JS Bootstrap</li>
-                            </ul>
-                           <a href="https://lbshelpdesk.netlify.app/" style="color: var(--primary-color); font-size: 25px;"><i class="fa fa-link"></i></a>
-                      
-                    </div>
-                    <div class="project-card">
+                        </ul>
+                        <a href="https://lbshelpdesk.netlify.app/"
+                            style="color: var(--primary-color); font-size: 25px;"><i class="fa fa-link"></i></a>
+
+                    </div> -->
+                    <div class="project-card" data-aos="fade-left" data-aos-offset="300"
+                        data-aos-easing="ease-in-sine">
                         <div class="project-image">
                             <img src="p.jpeg" alt="Portfolio Website">
                         </div>
                         <h3>Think Ai</h3>
                         <ul style="padding-left: 10px;">
-                            <li>AI Chatbot Development: Developed AI chatbots for PDF processing, website interaction, YouTube
-                                summarization, and image-based Q&A.</li>
-                            <li>Tools Used: Python, API integration</li>
-                            </ul>
-                           <a href="github.com/hubaibp/ThinkAI" style="color: var(--primary-color); font-size: 25px;"><i class="fa fa-link"></i></a>
-                      
-                         
+                            <li>Integrated real-time data retrieval with AI models to provide relevant and accurate
+                                responses for diverse use cases.</li>
+                            <li>Utilized Langchain and Streamlit to enhance user interactivity, supporting
+                                functionalities like PDF-based Q&A, website chat, and image processing.</li>
+                            <li>Tools Used :<br> HuggingFace Transformers |
+                                FAISS |
+                                LangChain |
+                                Chroma |
+                                spaCy</li>
+                        </ul>
+                        <a href="github.com/hubaibp/ThinkAI" style="color: var(--primary-color); font-size: 25px;"><i
+                                class="fa fa-link"></i></a>
+
                     </div>
+
+
+
+
+
+
+                    <div class="project-card" data-aos="fade-right"
+                    data-aos-offset="300"
+                    data-aos-easing="ease-in-sine">
+                        <div class="project-image">
+                            <img src="a1.png" alt="E-commerce Platform">
+                        </div>
+                        <h3>Al Fayiz Traders, Doha</h3>
+                        <ul style="padding-left: 10px;">
+                            <li>Developed a modern, responsive website for a hardware tools trader in Doha, Qatar, improving accessibility and user engagement.</li>
+                            <li>Designed and optimized product sections for various categories, ensuring seamless browsing and fast load times across all devices.</li>
+                            <li>Tools Used:<br> HTML | CSS | JS</li>
+                        </ul>
+                        <a href="https://alfayizdoha.com/" style="color: var(--primary-color); font-size: 25px;"><i
+                                class="fa fa-link"></i></a>
+                    </div>
+
+
+
+
+
                 </div>
             </div>
+
+
+            <center><button type="button" class="btn" id="project#">View more</button></center>
         </section>
 
         <section id="contact">
@@ -358,7 +430,8 @@
                     <a href="https://github.com/hubaibp"><i class="fab fa-github"></i></a>
                     <a href="linkedin.com/in/hubaibp"><i class="fab fa-linkedin"></i></a>
                     <!-- <a href="#"><i class="fab fa-twitter"></i></a> -->
-                    <a href="https://www.instagram.com/hubaib_p?igsh=bGFsbnFqODZlYmZz" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.instagram.com/hubaib_p?igsh=bGFsbnFqODZlYmZz" target="_blank"><i
+                            class="fab fa-instagram"></i></a>
                 </div>
             </div>
         </section>
@@ -367,4 +440,5 @@
     <script src="main.js"></script>
     </script>
 </body>
+
 </html>

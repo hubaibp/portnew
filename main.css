@@ -211,9 +211,7 @@ h1, h2 {
 }
 
 .about-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 100px;
+    justify-content: center;
 }
 
 
@@ -444,25 +442,6 @@ h1, h2 {
     margin-top: 15px;
 }
 
-/* .contact-form {
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: none;
-    background-color: #1e1e1e;
-    color: var(--text-color);
-    border-radius: 5px;
-}
-
-.contact-form textarea {
-    height: 150px;
-} */
 
 .social-icons {
     display: flex;

@@ -10,6 +10,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+  
 }
 
 canvas {
@@ -30,10 +31,12 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     line-height: 1.9;
+    width: 100%;
+     overflow-x: hidden; 
 }
 
 .container {
-    max-width: 1200px;
+  
     margin: 0 auto;
     padding: 20px;
     
@@ -67,8 +70,8 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+  
+  
 }
 
 .logo {

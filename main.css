@@ -13,6 +13,11 @@
   
 }
 
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+
 canvas {
     position: fixed;
     top: 0;

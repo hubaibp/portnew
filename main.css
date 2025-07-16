@@ -32,13 +32,14 @@ body {
     color: var(--text-color);
     line-height: 1.9;
     width: 100%;
-     overflow-x: hidden; 
+    overflow-x: hidden; 
 }
 
 .container {
   
     margin: 0 auto;
     padding: 20px;
+    overflow-x: hidden;
     
             }
 .typewriter {
@@ -247,6 +248,10 @@ h1, h2 {
     transform: translateY(-5px);
 }
 
+
+
+
+
 .timeline {
   position: relative;
   max-width: 1200px;
@@ -383,6 +388,16 @@ h1, h2 {
     border-color: transparent #00bfff transparent transparent;
   }
 }
+
+
+
+
+
+
+
+
+
+
 
 
 
